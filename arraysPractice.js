@@ -94,25 +94,22 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * 30);
 };
-// var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30.  There is also a commented out array full of numbers to help you visualize what your function will be receiving.
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
+var randomNumber = getRandomArbitrary();
 
- function finder(getRandomArbitrary, arr){
-   var bool;
+ function finder(randomNumber, arr){
   for(var i = 0; i < numbers.length; i++){
-    if(numbers.indexOf(getRandomArbitrary) !== -1){
-      bool = true;
-      break;
+    if(numbers.indexOf(randomNumber) !== -1){
+      return true;
     } 
   }
-  if(bool !== true){
-    return false;
-  } else {
-    return true;
-  }
+  return false;
  }
+
+ finder(randomNumber, numbers);
 
 
 //Next problem
@@ -279,7 +276,7 @@ array with those four objects. After that console.log the length of the Array an
 sure that it's equal to 4. */
 
   devMountainEmployees.push(tyler, cahlan, ryan, colt); 
-  console.log(devMountainEmployees.length); 
+  //console.log(devMountainEmployees.length); 
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
